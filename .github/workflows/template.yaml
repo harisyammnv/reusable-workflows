@@ -19,6 +19,7 @@ jobs:
     name: Pass Inputs and Print out
     runs-on: windows-latest
     steps:
-      - run: |
+      - name: PowerShell print statement
+        run: |
           Write-Output "Project Name: .\$env:project_name-Code.zip"
           Write-Output $env:model_name

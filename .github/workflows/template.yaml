@@ -1,0 +1,24 @@
+name: Reusable CI Template
+
+on:
+  workflow_call:
+    inputs:
+      project_name:
+        required: true
+        type: string
+      model_name:
+        required: true
+        type: string
+
+env:
+  project_name: ${{ inputs.project_name }}
+  model_name: ${{ inputs.model_name }}
+
+jobs:
+  testPS:
+    name: Pass Inputs and Print out
+    runs-on: windows-latest
+    steps:
+      - run: |
+          Write-Output "Project Name: $env:project_name"
+          Write-Output $env:model_name

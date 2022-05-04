@@ -1,0 +1,11 @@
+name: Caller CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-template-workflow:
+    uses: harisyammnv/reusable-workflows/.github/workflows/template.yaml@master
+    with:
+      project_name: Temp-Project
+      model_name: Temp-Model

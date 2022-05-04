@@ -20,5 +20,5 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: |
-          Write-Output "Project Name: $env:project_name"
+          Write-Output "Project Name: .\$env:project_name-Code.zip"
           Write-Output $env:model_name

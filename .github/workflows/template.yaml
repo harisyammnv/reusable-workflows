@@ -12,7 +12,7 @@ on:
 
 env:
   project_name: ${{ inputs.project_name }}
-  model_name: ${{ inputs.model_name }}
+  model_name: '${{ inputs.model_name }}'
 
 jobs:
   testPS:

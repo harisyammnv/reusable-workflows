@@ -26,4 +26,4 @@ jobs:
           Write-Host "https://artifactory.avl.com/artifactory/pypi-test/avl-py-doc-base/0.1.2/avl_py_doc_base-0.1.2.tar.gz"
       - name: Job Summary
         run: |
-          echo "### Hello world! :rocket: The arifact URL: [Link](https://artifactory.avl.com/artifactory/pypi-test/avl-py-doc-base/0.1.2/avl_py_doc_base-0.1.2.tar.gz)" >> $GITHUB_STEP_SUMMARY
+          echo "### Hello world! :rocket: " >> $GITHUB_STEP_SUMMARY

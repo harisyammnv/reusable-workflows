@@ -24,4 +24,3 @@ jobs:
           Write-Output "Project Name: .\$env:project_name-Code.zip"
           Write-Output $env:model_name
           Write-Host "https://artifactory.avl.com/artifactory/pypi-test/avl-py-doc-base/0.1.2/avl_py_doc_base-0.1.2.tar.gz"
-          echo "### Hello world! :rocket: Artifact URL: [Link](https://artifactory.avl.com/artifactory/pypi-test/avl-py-doc-base/0.1.2/avl_py_doc_base-0.1.2.tar.gz)" >> $GITHUB_STEP_SUMMARY

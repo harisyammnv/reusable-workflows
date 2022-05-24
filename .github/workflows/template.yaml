@@ -24,7 +24,7 @@ jobs:
           Write-Output "Project Name: .\$env:project_name-Code.zip"
           Write-Output $env:model_name
           $str_url = "https://artifactory.avl.com/artifactory/pypi-test/avl-py-doc-base/0.1.2//avl_py_doc_base-0.1.2.tar.gz"
-          $pattern = '[//]'
+          $pattern = '//'
           $str_url = $str_url -replace $pattern, '/'
           Write-Output $str_url
   jobArtifacts:

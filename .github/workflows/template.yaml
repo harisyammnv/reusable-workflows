@@ -26,7 +26,7 @@ jobs:
           $str_url = "https://artifactory.avl.com/artifactory/pypi-test/avl-py-doc-base/0.1.2//avl_py_doc_base-0.1.2.tar.gz"
           $pattern = '//'
           $str_url = $str_url -replace $pattern, '/'
-          Write-Output "[INFO] Upload has been successfull, The Artifact can be downloaded from: $str_url"
+          Write-Information "Upload has been successfull, The Artifact can be downloaded from:" $str_url
   jobArtifacts:
     runs-on: ubuntu-latest
     needs: testPS

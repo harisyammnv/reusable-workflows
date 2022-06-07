@@ -1,5 +1,15 @@
 name: Reusable CI Template
 
+inputs:
+   project_name:
+    description: 'URL for Jfrog artifactory'
+    required: false
+    default: "Test-Project"
+   model_name:
+    description: 'Model Name'
+    required: false
+    default: "Test-Model-Name"
+
 env:
   project_name: ${{ inputs.project_name }}
   model_name: '${{ inputs.model_name }}'

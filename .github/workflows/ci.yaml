@@ -9,6 +9,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Run Job
+      id: test123
       uses: harisyammnv/reusable-workflows@master
       with:
         project_name: Temp-Project
@@ -19,4 +20,4 @@ jobs:
       steps:
       - name: Print Job Artifact
         run: |
-          echo "### Hello world! :rocket: The Artifact URL: [Link](${{needs.gets-outputs.outputs.artifact_url}})" >> $GITHUB_STEP_SUMMARY
+          echo "### Hello world! :rocket: The Artifact URL: [Link](${{needs.gets-outputs.steps.test123.outputs.artifact_url}})" >> $GITHUB_STEP_SUMMARY

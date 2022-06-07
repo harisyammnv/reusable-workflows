@@ -16,6 +16,7 @@ outputs:
     value: ${{ steps.step1.outputs.artifact_url }}
 
 runs:
+  using: "composite"
   steps:
     - name: PowerShell print statement
       shell: powershell

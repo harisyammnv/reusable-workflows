@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-template-workflow:
-    uses: harisyammnv/reusable-workflows/.github/workflows/template.yaml@master
-    with:
-      project_name: Temp-Project
-      model_name: Temp-Model
+  #call-template-workflow:
   gets-outputs:
     runs-on: ubuntu-latest
-    needs: call-template-workflow
     steps:
+    - name: Run Job
+      uses: harisyammnv/reusable-workflows@master
+      with:
+        project_name: Temp-Project
+        model_name: Temp-Model
     - name: Print Job Artifact
       run: |
-          echo "### Hello world! :rocket: The Artifact URL: [Link](${{needs.testPS.outputs.output1}})" >> $GITHUB_STEP_SUMMARY
+          echo "### Hello world! :rocket: The Artifact URL: [Link](${{needs.call-template-workflow.outputs.output1}})" >> $GITHUB_STEP_SUMMARY

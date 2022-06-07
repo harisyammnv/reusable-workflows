@@ -6,13 +6,16 @@ on:
 jobs:
   #call-template-workflow:
   gets-outputs:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Run Job
       uses: harisyammnv/reusable-workflows@master
       with:
         project_name: Temp-Project
         model_name: Temp-Model
-    - name: Print Job Artifact
-      run: |
+  print-outputs:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Print Job Artifact
+        run: |
           echo "### Hello world! :rocket: The Artifact URL: [Link](${{needs.call-template-workflow.outputs.output1}})" >> $GITHUB_STEP_SUMMARY

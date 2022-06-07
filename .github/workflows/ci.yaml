@@ -15,4 +15,4 @@ jobs:
     steps:
     - name: Print Job Artifact
       run: |
-          echo "### Hello world! :rocket: The Artifact URL: [Link](${{needs.call-template-workflow.testPS.outputs.output1}})" >> $GITHUB_STEP_SUMMARY
+          echo "### Hello world! :rocket: The Artifact URL: [Link](${{needs.testPS.outputs.output1}})" >> $GITHUB_STEP_SUMMARY

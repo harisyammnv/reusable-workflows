@@ -9,3 +9,10 @@ jobs:
     with:
       project_name: Temp-Project
       model_name: Temp-Model
+  gets-outputs:
+    runs-on: ubuntu-latest
+    needs: call-template-workflow
+    steps:
+    - name: Print Job Artifact
+      run: |
+          echo "### Hello world! :rocket: The Artifact URL: [Link](${{needs.call-template-workflow.testPS.outputs.output1}})" >> $GITHUB_STEP_SUMMARY

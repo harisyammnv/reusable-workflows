@@ -15,6 +15,7 @@ jobs:
         model_name: Temp-Model
   print-outputs:
       runs-on: ubuntu-latest
+      needs: gets-outputs
       steps:
       - name: Print Job Artifact
         run: |

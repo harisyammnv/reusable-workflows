@@ -11,5 +11,4 @@ jobs:
         - name: Parse HTML report
           uses: harisyammnv/html-parser@development
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
             html_file: "result/index.html"

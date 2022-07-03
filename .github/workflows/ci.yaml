@@ -2,6 +2,8 @@ name: Caller CI
 
 on:
   workflow_dispatch:
+  
+permissions: read-all|write-all
 
 jobs:
   print-outputs:
@@ -11,5 +13,5 @@ jobs:
         - name: Parse HTML report
           uses: harisyammnv/html-parser@development
           with:
-            github_token: ${{ secrets.PAT_TOKEN }}
+            github_token: ${{ secrets.GITHUB_TOKEN }}
             html_file: "result/index.html"

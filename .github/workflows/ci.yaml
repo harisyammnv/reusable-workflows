@@ -3,7 +3,7 @@ name: Caller CI
 on:
   workflow_dispatch:
   
-permissions: read-all|write-all
+permissions: write-all
 
 jobs:
   print-outputs:

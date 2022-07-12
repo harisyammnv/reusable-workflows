@@ -11,7 +11,7 @@ jobs:
       steps:
         - uses: actions/checkout@v2
         - name: Parse HTML report
-          uses: harisyammnv/html-parser@development
+          uses: harisyammnv/Action-html-parser@development
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             html_file: "result/index.html"

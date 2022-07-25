@@ -16,7 +16,7 @@ jobs:
 #           github_token: ${{ secrets.GITHUB_TOKEN }}
 #           html_file: "result/index.html"
       - run: ls -lrt
-      - uses: .composite-actions/action.yml@master
+      - uses: ./composite-actions/action.yml@master
         with:
           who-to-greet: "Hari the Octocat"
       - run: echo random-number ${{ steps.foo.outputs.random-number }}

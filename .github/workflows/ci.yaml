@@ -17,7 +17,7 @@ jobs:
 #           html_file: "result/index.html"
       - run: pwd
       - run: ls -lrt
-      - uses: ./.github/actions/test.yml
+      - uses: ./.github/actions/test
         with:
           who-to-greet: "Hari the Octocat"
       - run: echo random-number ${{ steps.foo.outputs.random-number }}

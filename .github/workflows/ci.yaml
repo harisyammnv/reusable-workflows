@@ -7,15 +7,15 @@ permissions: write-all
 
 jobs:
   print-outputs:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Parse HTML report
-        uses: harisyammnv/Action-html-parser@v0.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          html_file: "result/index.html"
-      - uses: harisyammnv/reusable-workflows/composite-actions/action.yml@master
+#       - name: Parse HTML report
+#         uses: harisyammnv/Action-html-parser@v0.1
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           html_file: "result/index.html"
+      - uses: ./composite-actions/action.yml@master
         with:
           who-to-greet: "Hari the Octocat"
       - run: echo random-number ${{ steps.foo.outputs.random-number }}

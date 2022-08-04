@@ -7,19 +7,23 @@ permissions: write-all
 
 jobs:
   print-outputs:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Run PS script
+        run: |
+          $env:GITHUB_ACTION_PATH\test.ps1
+        shell: powershell
 #       - name: Parse HTML report
 #         uses: harisyammnv/Action-html-parser@v0.1
 #         with:
 #           github_token: ${{ secrets.GITHUB_TOKEN }}
 #           html_file: "result/index.html"
-      - run: |
-          cd .github
-          ls -lrt
-      - uses: ./.github/actions
-        with:
-          who-to-greet: "Hari the Octocat"
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+#       - run: |
+#           cd .github
+#           ls -lrt
+#       - uses: ./.github/actions
+#         with:
+#           who-to-greet: "Hari the Octocat"
+#       - run: echo random-number ${{ steps.foo.outputs.random-number }}
+#         shell: bash

@@ -24,7 +24,7 @@ jobs:
         shell: powershell
       - name: check flag
         run: |
-          echo ${{ steps.test.outputs.flag_exists }}
+          echo ${{ steps.test.outputs.files_exists }}
 #       - name: Parse HTML report
 #         uses: harisyammnv/Action-html-parser@v0.1
 #         with:

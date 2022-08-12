@@ -10,18 +10,29 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run PS script
+      - name: Run PS Script
         id: test
         run: |
-          flag=false
-          FOLDER="${{ github.workspace }}\\result"
-          if [ ! -e $FOLDER ]; then
-              $flag=true
+          $FOLDER="C:\"
+          $flag=$False
+          if (Test-Path $FOLDER) {
+              $flag = $True
               echo "::set-output name=result::$flag"
-          else 
-              echo "::set-output name=result::$flag"
-          fi
-        shell: bash
+          } 
+          echo "::set-output name=result::$flag"
+        shell: powershell
+#       - name: Run PS script
+#         id: test
+#         run: |
+#           flag=false
+#           FOLDER="${{ github.workspace }}\\result"
+#           if [ ! -e $FOLDER ]; then
+#               $flag=true
+#               echo "::set-output name=result::$flag"
+#           else 
+#               echo "::set-output name=result::$flag"
+#           fi
+#         shell: bash
       - name: check flag
         run: |
           echo ${{ steps.test.outputs.result }}

@@ -34,8 +34,8 @@ jobs:
 #           fi
 #         shell: bash
       - name: check flag
+        if: steps.test.outputs.result
         run: |
-          echo $Env:GITHUB_WORKSPACE\composite-actions
           echo ${{ steps.test.outputs.result }}
 #       - name: Parse HTML report
 #         uses: harisyammnv/Action-html-parser@v0.1

@@ -17,14 +17,13 @@ jobs:
           $flag=$False
           if (Test-Path $FOLDER) {
               $flag = $True
-              echo "::set-output name=files_exists::$flag"
-          } else {
-              echo "::set-output name=files_exists::$flag"
-          }
+              echo "::set-output name=result::$flag"
+          } 
+          echo "::set-output name=result::$flag"
         shell: powershell
       - name: check flag
         run: |
-          echo ${{ steps.test.outputs.files_exists }}
+          echo ${{ steps.test.outputs.result }}
 #       - name: Parse HTML report
 #         uses: harisyammnv/Action-html-parser@v0.1
 #         with:

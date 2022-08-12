@@ -13,9 +13,9 @@ jobs:
       - name: Run PS script
         id: test
         run: |
-          $flag=false
-          $FOLDER="${{ github.workspace }}\\result"
-          if [ ! -e "$FOLDER" ]; then
+          flag=false
+          FOLDER="${{ github.workspace }}\\result"
+          if [ ! -e $FOLDER ]; then
               $flag=true
               echo "::set-output name=result::$flag"
           else 

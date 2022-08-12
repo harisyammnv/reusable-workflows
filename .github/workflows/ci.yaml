@@ -15,7 +15,7 @@ jobs:
         run: |
           $flag=false
           $FOLDER="${{ github.workspace }}\\result"
-          if [ ! -e "$file" ]; then
+          if [ ! -e "$FOLDER" ]; then
               $flag=true
               echo "::set-output name=result::$flag"
           else 

@@ -13,14 +13,15 @@ jobs:
       - name: Run PS script
         id: test
         run: |
-          $FOLDER="${{ github.workspace }}"
-          $flag=$False
-          if (Test-Path $FOLDER) {
-              $flag = $True
+          $flag=false
+          $FOLDER="${{ github.workspace }}\\result"
+          if [ ! -e "$file" ]; then
+              $flag=true
               echo "::set-output name=result::$flag"
-          } 
-          echo "::set-output name=result::$flag"
-        shell: powershell
+          else 
+              echo "::set-output name=result::$flag"
+          fi
+        shell: bash
       - name: check flag
         run: |
           echo ${{ steps.test.outputs.result }}

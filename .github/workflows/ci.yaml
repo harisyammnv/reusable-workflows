@@ -35,6 +35,8 @@ jobs:
 #         shell: bash
       - name: check flag
         run: |
+          echo ${{ env.GITHUB_ACTION_PATH }}
+          echo ${{ env.GITHUB_PATH }}
           echo ${{ steps.test.outputs.result }}
 #       - name: Parse HTML report
 #         uses: harisyammnv/Action-html-parser@v0.1

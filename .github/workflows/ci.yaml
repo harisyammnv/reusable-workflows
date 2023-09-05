@@ -9,7 +9,7 @@ jobs:
   print-outputs:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Run PS Script
         id: test
         run: |
